@@ -1,0 +1,64 @@
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,60 @@
++PREFIX=/usr
++INCDIR=$(PREFIX)/include
++LIBDIR=$(PREFIX)/lib
++
++VER_MAJ = 1
++LIB = libu8g
++LIB_FILE = $(LIB).so
++SLIB_FILE = $(LIB).a
++
++CFLAGS := -c -Wall -fPIC -Isrc/. -O2
++
++SRC = 	src/u8g_bitmap.c \
++	src/u8g_circle.c \
++	src/u8g_clip.c \
++	src/u8g_com_api.c \
++	src/u8g_cursor.c \
++	src/u8g_delay.c \
++	src/u8g_dev_linux_fb.c \
++	src/u8g_ellipse.c \
++	src/u8g_font.c \
++	src/u8g_font_data.c \
++	src/u8g_line.c \
++	src/u8g_ll_api.c \
++	src/u8g_page.c \
++	src/u8g_pb8h1f.c \
++	src/u8g_pb.c \
++	src/u8g_polygon.c \
++	src/u8g_rect.c \
++	src/u8g_rot.c \
++	src/u8g_scale.c \
++	src/u8g_state.c \
++	src/u8g_u16toa.c \
++	src/u8g_virtual_screen.c
++
++OBJ = $(SRC:.c=.o)
++
++all: $(LIB_FILE) $(SLIB_FILE)
++
++%.o: %.c
++	$(CC) $(CFLAGS) -o $@ $?
++
++$(LIB_FILE): $(OBJ)
++	$(CC) -shared -Wl,-soname,$@.$(VER_MAJ) -o $@ $?
++
++$(SLIB_FILE): $(OBJ)
++	$(AR) cqs $(SLIB_FILE) $(OBJ)
++
++clean:
++	rm -f $(OBJ)
++
++distclean: clean
++	rm -f $(LIB_FILE) $(SLIB_FILE)
++
++install: all
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	install -m 755 $(LIB_FILE) $(DESTDIR)$(LIBDIR)/$(LIB_FILE).$(VER_MAJ)
++	ln -sf $(LIB_FILE).$(VER_MAJ) $(DESTDIR)$(LIBDIR)/$(LIB_FILE)
++	install -m 755 $(SLIB_FILE) $(DESTDIR)$(LIBDIR)
++	mkdir -p $(DESTDIR)$(INCDIR)
++	install -pm 644 src/u8g.h $(DESTDIR)$(INCDIR)
+\ No newline at end of file

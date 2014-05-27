@@ -1,0 +1,3 @@
+fix-compiler-warning.patch
+linux-fb-support.patch
+makefile.patch

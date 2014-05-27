@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+version = $(shell dpkg-parsechangelog|sed -n -e 's/^Version: //p'|cut -d- -f1|cut -d. -f1-2)
+
+%:
+	dh $@ 

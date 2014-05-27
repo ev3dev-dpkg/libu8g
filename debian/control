@@ -1,0 +1,25 @@
+Source: libu8g
+Priority: optional
+Maintainer: David Lechner <david@lechnology.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.5
+Section: libs
+Homepage: https://code.google.com/p/u8glib/
+Vcs-Git: git://github.com/ev3dev-dpkg/libu8g.git
+Vcs-Browser: https://github.com/ev3dev-dpkg/libu8g
+
+Package: libu8g-dev
+Section: libdevel
+Architecture: any
+Depends: libu8g1 (= ${binary:Version})
+Description: Graphics library for simple displays
+ Graphics library that targets small LCD displays generally used with
+ microcontrollers.
+
+Package: libu8g1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Graphics library for simple displays
+ Graphics library that targets small LCD displays generally used with
+ microcontrollers.

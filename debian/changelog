@@ -1,0 +1,6 @@
+libu8g (1.15-ev3dev1~2) stable; urgency=low
+
+  * Initial release
+  * Includes patches to get upstream working with linux framebuffer
+
+ -- David Lechner <david@lechnology.com>  Mon, 26 May 2014 19:47:07 -0500
