@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/Makefile
-@@ -0,0 +1,60 @@
+@@ -0,0 +1,57 @@
 +PREFIX=/usr
 +INCDIR=$(PREFIX)/include
 +LIBDIR=$(PREFIX)/lib
@@ -10,7 +10,7 @@
 +LIB_FILE = $(LIB).so
 +SLIB_FILE = $(LIB).a
 +
-+CFLAGS := -c -Wall -fPIC -Isrc/. -O2
++CFLAGS := -Wall -fPIC -g
 +
 +SRC = 	src/u8g_bitmap.c \
 +	src/u8g_circle.c \
@@ -39,9 +39,6 @@
 +
 +all: $(LIB_FILE) $(SLIB_FILE)
 +
-+%.o: %.c
-+	$(CC) $(CFLAGS) -o $@ $?
-+
 +$(LIB_FILE): $(OBJ)
 +	$(CC) -shared -Wl,-soname,$@.$(VER_MAJ) -o $@ $?
 +
@@ -61,4 +58,3 @@
 +	install -m 755 $(SLIB_FILE) $(DESTDIR)$(LIBDIR)
 +	mkdir -p $(DESTDIR)$(INCDIR)
 +	install -pm 644 src/u8g.h $(DESTDIR)$(INCDIR)
-\ No newline at end of file

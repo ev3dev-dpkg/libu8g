@@ -1,4 +1,4 @@
-libu8g (1.15-ev3dev1~2) stable; urgency=low
+libu8g (1.15-ev3dev1) stable; urgency=low
 
   * Initial release
   * Includes patches to get upstream working with linux framebuffer
