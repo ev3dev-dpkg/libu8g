@@ -7,4 +7,7 @@
 version = $(shell dpkg-parsechangelog|sed -n -e 's/^Version: //p'|cut -d- -f1|cut -d. -f1-2)
 
 %:
-	dh $@ 
+	dh $@
+
+override_dh_strip:
+	dh_strip --keep-debug
