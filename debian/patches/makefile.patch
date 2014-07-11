@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/Makefile
-@@ -0,0 +1,57 @@
+@@ -0,0 +1,60 @@
 +PREFIX=/usr
 +INCDIR=$(PREFIX)/include
 +LIBDIR=$(PREFIX)/lib
@@ -26,6 +26,9 @@
 +	src/u8g_ll_api.c \
 +	src/u8g_page.c \
 +	src/u8g_pb8h1f.c \
++	src/u8g_pb8h8.c \
++	src/u8g_pbxh16.c \
++	src/u8g_pbxh24.c \
 +	src/u8g_pb.c \
 +	src/u8g_polygon.c \
 +	src/u8g_rect.c \
