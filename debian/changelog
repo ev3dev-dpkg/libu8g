@@ -1,3 +1,10 @@
+libu8g (1.15-ev3dev2) stable; urgency=medium
+
+  * Build graphics handlers for running on desktop
+  * Keep debug symbols
+
+ -- David Lechner <david@lechnology.com>  Fri, 11 Jul 2014 17:56:28 -0500
+
 libu8g (1.15-ev3dev1) stable; urgency=low
 
   * Initial release

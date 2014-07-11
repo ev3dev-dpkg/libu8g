@@ -11,10 +11,12 @@ Vcs-Browser: https://github.com/ev3dev-dpkg/libu8g
 Package: libu8g-dev
 Section: libdevel
 Architecture: any
-Depends: libu8g1 (= ${binary:Version})
+Depends: libu8g1 (= ${binary:Version}), ${misc:Depends}
 Description: Graphics library for simple displays
  Graphics library that targets small LCD displays generally used with
  microcontrollers.
+ .
+ This package contiains development files for libu8g.
 
 Package: libu8g1
 Section: libs
