@@ -1,12 +1,12 @@
-Source: libu8g
+Source: u8glib
 Priority: optional
 Maintainer: David Lechner <david@lechnology.com>
 Build-Depends: debhelper (>= 9.0.0)
 Standards-Version: 3.9.5
 Section: libs
 Homepage: https://code.google.com/p/u8glib/
-Vcs-Git: git://github.com/ev3dev-dpkg/libu8g.git
-Vcs-Browser: https://github.com/ev3dev-dpkg/libu8g
+Vcs-Git: git://github.com/ev3dev-dpkg/u8glib.git
+Vcs-Browser: https://github.com/ev3dev-dpkg/u8glib
 
 Package: libu8g-dev
 Section: libdevel
